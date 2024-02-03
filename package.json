@@ -1,0 +1,22 @@
+{
+  "name": "logic-engine",
+  "version": "1.0.0",
+  "description": "A logic engine in js / ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NathOrmond/logic-engine.git"
+  },
+  "author": "Nathan Ormond",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathOrmond/logic-engine/issues"
+  },
+  "homepage": "https://github.com/NathOrmond/logic-engine#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
