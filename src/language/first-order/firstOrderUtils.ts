@@ -1,3 +1,5 @@
+import { Atom, Complex, WFF } from './firstOrderTypes';
+
 const binaryOperatorToLogic = {
   '&': (a: boolean, b: boolean) => a && b,
   '|': (a: boolean, b: boolean) => a || b,
@@ -5,4 +7,12 @@ const binaryOperatorToLogic = {
   '<->': (a: boolean, b: boolean) => a === b
 };
 
-export { binaryOperatorToLogic };
+const isAtom: (wff: WFF) => boolean = (wff: WFF) => {
+  return (wff as Atom).proposition !== undefined;
+}
+
+const isComplex: (wff: WFF)=> boolean = (wff: WFF) => {
+  return (wff as Complex).left !== undefined || (wff as Complex).binaryOperator !== undefined;
+}
+
+export { binaryOperatorToLogic, isAtom, isComplex};
