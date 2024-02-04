@@ -1,4 +1,4 @@
-import { WFF, Atom, Complex, UnaryOperator, BinaryOperator } from './firstOrderTypes';
+import { WFF,  Complex, BinaryOperator } from './firstOrderTypes';
 import { binaryOperatorToLogic } from './firstOrderUtils';
 
 export class ComplexImpl implements Complex {
