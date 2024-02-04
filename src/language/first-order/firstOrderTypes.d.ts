@@ -3,54 +3,20 @@ type UnaryOperator = '~';
 
 type BinaryOperator = '&' | '|' | '->' | '<->';
 
+type WFF  = Atom | Complex; 
 
-type AtomicArg = () => boolean;
-
-interface Atom { 
-  isAtomic: true;
-  proposition: AtomicArg;
-  toString: () => string;
+interface Atom {
   unaryOperator: UnaryOperator | undefined;
+  proposition: boolean | (() => boolean);
+  value: () => boolean;
 }
 
-interface ComplexArg {
-  args: [WFF, WFF];
-  connective: BinaryOperator;  
-}
-
-interface Complex {
-  isAtomic: false;
-  proposition: (( arg: ComplexArg ) => boolean);
-  toString: () => string;
+interface Complex { 
   unaryOperator: UnaryOperator | undefined;
+  left: WFF;
+  binaryOperator: BinaryOperator;
+  right: WFF;
+  value: () => boolean;
 }
 
-type WFF = Complex | Atom;
-
-interface Proposition {
-  wff: WFF;
-  value: boolean;
-}
-
-interface AtomicProposition extends Proposition {
-  wff: Atom
-  value: boolean;
-}
-
-interface ComplexProposition extends Proposition {
-  wff: Complex;
-  value: boolean;
-}
-
-export {
-  ComplexArg,
-  Complex,
-  AtomicArg,
-  Atom,
-  WFF,
-  Proposition,
-  AtomicProposition,
-  ComplexProposition,
-  UnaryOperator,
-  BinaryOperator
-}
+export { WFF, Atom, Complex, UnaryOperator, BinaryOperator };

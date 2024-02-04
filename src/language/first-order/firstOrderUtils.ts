@@ -1,10 +1,6 @@
-const binaryOperatorLogicMap = {
-  '&': (p: boolean, q: boolean) => p && q,
-  '|': (p: boolean, q: boolean) => p || q,
-  '->': (p: boolean, q: boolean) => !p || q,
-  '<->': (p: boolean, q: boolean) => p === q  
+export const binaryOperatorToLogic = {
+  '&': (a: boolean, b: boolean) => a && b,
+  '|': (a: boolean, b: boolean) => a || b,
+  '->': (a: boolean, b: boolean) => !a || b,
+  '<->': (a: boolean, b: boolean) => a === b
 };
-
-export {
-  binaryOperatorLogicMap 
-}
