@@ -5,18 +5,22 @@
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
+    "declaration": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"], 
       "@test/*": ["test/*"],
-      "@firstOrder/*": ["src/firstOrder/*"],
+      "@language/*": ["src/language/*"],
+      "@firstOrder/*": ["src/language/firstOrder/*"],
+      "@engine/*": ["src/engine/*"],
     }
   },
   "include": [
     "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
